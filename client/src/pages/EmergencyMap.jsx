@@ -146,11 +146,11 @@ export default function EmergencyMap() {
   };
 
   const typeColors = {
-    hospital: 'text-green-400',
-    police: 'text-blue-400',
-    ambulance: 'text-red-400',
-    towing: 'text-purple-400',
-    repair: 'text-orange-400',
+    hospital: 'hsl(145 65% 42%)',
+    police: 'hsl(195 100% 50%)',
+    ambulance: 'hsl(45 95% 55%)',
+    towing: 'hsl(280 85% 65%)',
+    repair: 'hsl(45 95% 55%)',
   };
 
   const filterOptions = [
@@ -297,7 +297,7 @@ export default function EmergencyMap() {
               onClick={() => setFilter(f.key)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-all border`}
               style={{
                 background:
                   filter === f.key
@@ -467,7 +467,6 @@ export default function EmergencyMap() {
                         isSelected ? null : service
                       )
                     }
-                    whileHover={{ scale: 1.02 }}
                     className="p-4 rounded-xl border cursor-pointer transition-all"
                     style={{
                       borderColor: isSelected
@@ -482,44 +481,30 @@ export default function EmergencyMap() {
                         : 'var(--shadow-card)',
                     }}
                   >
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-center gap-3">
                       <div
-                        className="mt-1"
+                        className="flex-shrink-0"
                         style={{ color: typeColors[service.type] }}
                       >
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-6 h-6" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <p className="font-semibold text-sm text-white truncate">
+                          <p className="font-semibold text-white truncate">
                             {service.name}
                           </p>
                           {service.verified && (
-                            <BadgeCheck className="w-4 h-4 text-green-400 flex-shrink-0" />
+                            <BadgeCheck className="w-4 h-4 flex-shrink-0" style={{ color: 'hsl(145 65% 42%)' }} />
                           )}
                         </div>
-                        <div className="flex items-center gap-3 mt-2">
+                        <div className="flex items-center gap-4 mt-2">
                           <span className="text-xs text-gray-400 flex items-center gap-1">
-                            <MapPin className="w-3 h-3" /> {service.distance}{' '}
-                            km
+                            <MapPin className="w-3 h-3" /> {service.distance} km
                           </span>
-                          <span className="text-xs font-medium flex items-center gap-1" style={{ color: 'hsl(0 85% 55%)' }}>
-                            <Clock className="w-3 h-3" /> ETA: {service.eta}
+                          <span className="text-xs font-bold flex items-center gap-1" style={{ color: 'hsl(45 95% 55%)' }}>
+                            ETA: {service.eta}
                           </span>
                         </div>
-                        {idx === 0 && filter !== 'all' && (
-                          <motion.span
-                            initial={{ opacity: 0, y: -5 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="inline-block mt-2 text-[10px] px-2 py-1 rounded-full font-medium"
-                            style={{
-                              background: 'hsl(145 65% 42% / 0.2)',
-                              color: 'hsl(145 65% 42%)',
-                            }}
-                          >
-                            ⭐ Nearest
-                          </motion.span>
-                        )}
                       </div>
                     </div>
                   </motion.div>

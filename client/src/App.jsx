@@ -4,6 +4,8 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Detection from './pages/Detection'
 import EmergencyMap from './pages/EmergencyMap'
+import Dashboard from './pages/Dashboard'
+import About from './pages/About'
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/detection" element={<Detection />} />
           <Route path="/emergency-map" element={<EmergencyMap />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>

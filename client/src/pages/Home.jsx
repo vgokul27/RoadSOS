@@ -159,7 +159,7 @@ export default function Home() {
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-center text-gray-400 text-lg sm:text-xl max-w-2xl mb-12"
+          className="text-center text-gray-400 text-lg sm:text-xl max-w-2xl mb-8"
         >
           Intelligent accident detection, instant severity analysis, and real-time
           connection to emergency services. Every second counts.
@@ -168,7 +168,7 @@ export default function Home() {
         {/* Feature Pills */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8"
         >
           {features.map((feature) => {
             const Icon = feature.icon;
@@ -180,7 +180,7 @@ export default function Home() {
                   boxShadow: 'var(--shadow-glow-red)',
                 }}
                 whileTap={{ scale: 0.95 }}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full border transition-all`}
+                className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all`}
                 style={{
                   borderColor: 'hsl(0 85% 55% / 0.3)',
                   backgroundColor: 'hsl(220 13% 10% / 0.8)',
@@ -188,8 +188,8 @@ export default function Home() {
                   boxShadow: 'var(--shadow-card)',
                 }}
               >
-                <Icon className="w-5 h-5" style={{ color: 'hsl(0 85% 55%)' }} />
-                <span className="text-gray-300 text-sm sm:text-base font-medium">
+                <Icon className="w-4 h-4" style={{ color: 'hsl(0 85% 55%)' }} />
+                <span className="text-gray-300 text-xs sm:text-sm font-medium">
                   {feature.label}
                 </span>
               </motion.button>
@@ -213,7 +213,7 @@ export default function Home() {
           {/* Main SOS Button */}
           <motion.button
             onClick={() => setIsSOSActive(!isSOSActive)}
-            className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full shadow-2xl flex flex-col items-center justify-center gap-1 focus:outline-none text-white"
+            className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full cursor-pointer shadow-2xl flex flex-col items-center justify-center gap-1 focus:outline-none text-white"
             style={{
               background: 'var(--gradient-emergency)',
               boxShadow: 'var(--shadow-card)',
@@ -235,7 +235,7 @@ export default function Home() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="flex flex-col items-center gap-2 text-gray-400 hover:text-red-400 transition-colors"
+            className="flex flex-col items-center gap-2 cursor-pointer text-gray-400 hover:text-red-400 transition-colors"
           >
             <div className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center hover:border-red-500">
               <Headphones className="w-5 h-5" />
@@ -255,7 +255,7 @@ export default function Home() {
               boxShadow: 'var(--shadow-glow-red)',
             }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl text-white font-bold transition-shadow"
+            className="flex items-center justify-center cursor-pointer gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl text-white font-bold transition-shadow"
             style={{
               background: 'var(--gradient-emergency)',
               boxShadow: 'var(--shadow-card)',
@@ -271,7 +271,7 @@ export default function Home() {
               boxShadow: 'var(--shadow-glow-green)',
             }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl border-2 text-white font-bold transition-colors"
+            className="flex items-center justify-center cursor-pointer gap-2 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl border-2 text-white font-bold transition-colors"
             style={{
               borderColor: 'hsl(145 65% 42%)',
               background: 'transparent',
@@ -403,7 +403,7 @@ export default function Home() {
                 boxShadow: '0 0 20px hsl(45 95% 55% / 0.4)',
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-gray-900 whitespace-nowrap transition-all flex-shrink-0"
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full cursor-pointer font-bold text-gray-900 whitespace-nowrap transition-all flex-shrink-0"
               style={{
                 background: 'hsl(45 95% 55%)',
               }}
